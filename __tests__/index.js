@@ -23,4 +23,16 @@ describe('Code kata', () => {
     expect(answer('4')).toEqual('4');
     expect(answer('string')).toEqual('string');
   });
+  it('should be able to use a custom ruleset', () => {
+    const customRule = { 7: 'Foo', 8: 'Bar' };
+    expect(answer(3, customRule)).toEqual(3);
+    expect(answer(5, customRule)).toEqual(5);
+
+    expect(answer(7, customRule)).toEqual('Foo');
+    expect(answer(8, customRule)).toEqual('Bar');
+    expect(answer(56, customRule)).toEqual('FooBar');
+
+    expect(answer(17, customRule)).toEqual('Foo');
+    expect(answer(18, customRule)).toEqual('Bar');
+  });
 });
