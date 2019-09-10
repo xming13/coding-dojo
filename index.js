@@ -1,16 +1,14 @@
 const answer = (number) => {
-  if (number % 3 === 0 && number % 5 === 0) {
-    return 'FizzBuzz'
+  let output = '';
+ 
+  if (number % 3 === 0 || number.toString(10).includes('3')) {
+    output += 'Fizz'
   }
 
-  if (number % 3 === 0) {
-    return 'Fizz'
+  if (number % 5 === 0 || number.toString(10).includes('5')) {
+    output += 'Buzz'
   }
 
-  if (number % 5 === 0) {
-    return 'Buzz'
-  }
-
-	return number
+	return output === '' ? number : output
 }
 export default answer;
